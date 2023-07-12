@@ -14,7 +14,7 @@ pipeline{
         }
         stage('UaT'){
             steps{
-                echo "THis is dev branch"
+                echo "THis is hotfix branch"
             }
         }
     }
