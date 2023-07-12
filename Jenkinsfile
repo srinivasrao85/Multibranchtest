@@ -14,7 +14,7 @@ pipeline{
         }
         stage('UaT'){
             steps{
-                echo "THis is feature branch"
+                echo "THis is dev branch"
             }
         }
     }
