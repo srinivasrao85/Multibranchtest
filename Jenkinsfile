@@ -14,7 +14,7 @@ pipeline{
         }
         stage('UaT'){
             steps{
-                echo "moved uat"
+                echo "THis is feature branch"
             }
         }
     }
