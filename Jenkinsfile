@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage('Build Example') {
             when {
-                allof{
+                allOf{
                     branch 'production'
                     environment name: 'DEPLOY_TO' , value: 'production'
                 }
