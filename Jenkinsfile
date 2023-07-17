@@ -25,7 +25,7 @@ pipeline{
         }
         stage('Prod deploy'){
             when{
-                buildTag()
+                buildingTag()
             }
             steps{
                 echo " Deploying in Prod"
