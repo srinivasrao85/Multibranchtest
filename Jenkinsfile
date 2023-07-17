@@ -11,7 +11,6 @@ pipeline{
             stage('sonar'){
                 steps{
                    echo "****performing sonar scans ******"
-                    error "Trying to recreate"
                    sleep 10
              }
             }
@@ -24,6 +23,7 @@ pipeline{
             stage('Trivy'){
                 steps{
                     echo "**********container images scan*******"
+                    error "Trivia should fail"
                     sleep 10
                 }
             }
