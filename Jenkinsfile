@@ -1,26 +1,28 @@
 pipeline{
     agent any
     environment{
-        DEPLOY_TO = 'production'
+        DEPLOY_TO = "srini"
     }
-    stages {
-        stage('Build Example') {
-            when {
-                allOf{
-                    branch 'production'
-                    environment name: 'DEPLOY_TO' , value: 'production'
+    stages{
+        stage('Build example'){
+            steps{
+                echo "This is build stage"
+            }
+
+        } 
+        stage('Git'){
+            when{
+                anyOf{
+                    expression{
+                    BRANCH_NAME ==~ /(production|staging)/
+                    }
                 }
+                environment name: 'DEPLOY_TO' value: 'srini'
             }
             steps{
-                echo "Deploying in production"
-                
+                echo "Deploying in prod"
             }
         }
-        stage('Second stage'){
-            steps{
-                echo "Execute, irrespective of the condition"
-            }
-        }
-        
+           
     }
 }
