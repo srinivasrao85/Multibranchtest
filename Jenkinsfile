@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        DEPLOY_TO = "srini"
+        DEPLOY_TO = 'srini'
     }
     stages{
         stage('Build example'){
@@ -14,7 +14,7 @@ pipeline{
             when{
                 anyOf{
                     expression{
-                    BRANCH_NAME ==~ /(productions|staging)/
+                    BRANCH_NAME ==~ /(production|staging)/
                     }
                 }
                 environment name: 'DEPLOY_TO' value: 'srini'
