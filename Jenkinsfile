@@ -17,7 +17,7 @@ pipeline{
                     BRANCH_NAME ==~ /(production|staging)/
                     }
                 }
-                environment name: 'DEPLOY_TO' value: 'srini'
+                environment name: 'DEPLOY_TO' , value: 'srini'
             }
             steps{
                 echo "Deploying in prod"
