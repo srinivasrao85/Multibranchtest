@@ -7,7 +7,7 @@ pipeline{
           }
         }
         stage('scans'){
-          Parallel {
+          parallel {
             stage('sonar'){
                 steps{
                    echo "****performing sonar scans ******"
