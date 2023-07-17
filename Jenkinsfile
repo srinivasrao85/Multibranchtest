@@ -1,38 +1,39 @@
 pipeline{
     agent any
-    environment{
-        DEPLOY_TO = 'srini'
-    }
     stages{
-        stage('Build example'){
-            steps{
-                echo "This is build stage"
+        stage('Build'){
+          steps{
+            echo "Building maven apps"
+          }
+        }
+        stage('scans'){
+          Parallel {
+            stage('sonar'){
+                steps{
+                   echo "****performing sonar scans ******"
+                   sleep 10
+             }
             }
-
-        } 
-        stage('Git'){
-            when{
-                anyOf{
-                    expression{
-                    BRANCH_NAME ==~ /(production|staging)/
-                    }
+            stage('fortify'){
+                steps{
+                  echo "*****fortify scan scans *****"
+                  sleep 10
                 }
-                environment name: 'DEPLOY_TO' , value: 'srini'
             }
-            steps{
-                echo "Deploying in non prod"
+            stage('Trivy'){
+                staeps{
+                    echo "**********container images scan*******"
+                    sleep 10
+                }
             }
+            
+          }  
+        
+       } 
+       stage('Deploy'){
+        steps{
+            echo "Deploying to env"
         }
-        stage('Prod deploy'){
-            when{
-                //buildingTag()
-               // tag pattern: "v\\d{1,2}.\\d{1,2}.\\d{1,2}", comparator: "REGEXP" 
-               changeRequest()
-            }
-            steps{
-                echo " Deploying in Prod"
-            }
-        }
-           
-    }
+       } 
+    }   
 }
