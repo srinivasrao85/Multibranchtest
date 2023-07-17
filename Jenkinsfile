@@ -7,6 +7,7 @@ pipeline{
           }
         }
         stage('scans'){
+          failFast true
           parallel {
             stage('sonar'){
                 steps{
