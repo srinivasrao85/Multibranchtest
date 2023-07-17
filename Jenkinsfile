@@ -20,7 +20,15 @@ pipeline{
                 environment name: 'DEPLOY_TO' , value: 'srini'
             }
             steps{
-                echo "Deploying in prod"
+                echo "Deploying in non prod"
+            }
+        }
+        stage{
+            when{
+                buildTag()
+            }
+            steps{
+                echo " Deploying in Prod"
             }
         }
            
