@@ -11,6 +11,7 @@ pipeline{
             stage('sonar'){
                 steps{
                    echo "****performing sonar scans ******"
+                    error "Trying to recreate"
                    sleep 10
              }
             }
