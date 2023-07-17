@@ -21,7 +21,7 @@ pipeline{
                 }
             }
             stage('Trivy'){
-                staeps{
+                steps{
                     echo "**********container images scan*******"
                     sleep 10
                 }
