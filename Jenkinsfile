@@ -20,7 +20,7 @@ pipeline{
                 environment name: 'DEPLOY_TO' , value: 'srini'
             }
             steps{
-                echo "Deploying in prod"
+                echo "Deploying in prods"
             }
         }
            
