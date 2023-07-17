@@ -14,7 +14,7 @@ pipeline{
             when{
                 anyOf{
                     expression{
-                    BRANCH_NAME ==~ /(production|staging)/
+                    BRANCH_NAME ==~ /(productions|staging)/
                     }
                 }
                 environment name: 'DEPLOY_TO' value: 'srini'
