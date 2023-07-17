@@ -25,7 +25,8 @@ pipeline{
         }
         stage('Prod deploy'){
             when{
-                buildingTag()
+                //buildingTag()
+                tag pattern: "v\\d{1,2}.\\d{1,2}.\\d{1,2}", comparator: "REGEXP" 
             }
             steps{
                 echo " Deploying in Prod"
