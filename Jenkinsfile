@@ -23,7 +23,7 @@ pipeline{
                 echo "Deploying in non prod"
             }
         }
-        stage{
+        stage('Prod deploy'){
             when{
                 buildTag()
             }
