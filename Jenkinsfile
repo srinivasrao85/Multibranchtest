@@ -11,6 +11,21 @@ pipeline{
             defaultValue: true,
             description: 'Is SRE approval taken for this release'
         )
+        choice(
+            choices: 'Regular\nHotfix',
+            description: "What sort of Release is this, regular or hotfix? ",
+            name: 'Release'
+        )
+        text(
+            name: 'Notes',
+            defaultValue: 'Enter Release notes',
+            description: 'Do enter the description'
+        )
+        credentials(
+            name: 'mycredentials',
+            description: "myCredentials",
+            required: true
+        )
     }
     stages{
         stage('welcome'){
