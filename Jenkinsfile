@@ -32,6 +32,7 @@ pipeline{
             steps{
                 echo "echo welcome ${params.USR_NAME}"
                 echo "Status of approval ${params.SRE_APPROVED}"
+                echo "This is a ${params.Release}"
             }
         }
     }
