@@ -11,10 +11,10 @@ pipeline{
                 timeout(time: 30 ,unit: 'SECONDS')
             }
             input {
-                message: "Should i continue ??"
-                ok: "Approved"
-                submitter: 'srini'
-                submitterParameter: "whoapproved"
+                message "Should i continue ??"
+                ok "Approved"
+                submitter 'srini'
+                submitterParameter "whoapproved"
                 parameters{
                     string (
                         name: 'USR_NAME',
