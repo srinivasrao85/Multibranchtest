@@ -10,40 +10,44 @@ pipeline{
             options{
                 timeout(time: 30 ,unit: 'SECONDS')
             }
-            input{
+            input {
                 message: "Should i continue ??"
                 ok: "Approved"
                 submitter: 'Aarya'
                 submitterParameter: "whoapproved"
                 parameters{
-                string (
-                   name: 'USR_NAME',
-                   defaultValue: 'Srini', 
-                   description: 'Do enter your name'
+                    string (
+                        name: 'USR_NAME',
+                        defaultValue: 'Srini', 
+                        description: 'Do enter your name'
                    )
-                booleanParam(
-                   name: 'SRE_APPROVED',
-                   defaultValue: true,
-                   description: 'Is SRE approval taken for this release'
+                    string (
+                        name: 'CHG_Ticket',
+                        defaultValue: 'CHG1234',
+                        description: 'Do enter your name'
+                    )
+                    booleanParam (
+                        name: 'SRE_APPROVED',
+                        defaultValue: true,
+                        description: 'Is SRE approval taken for this release'
                    )
-                choice(
-                   choices: 'Regular\nHotfix',
-                   description: "What sort of Release is this, regular or hotfix? ",
-                   name: 'Release'
+                    choice (
+                        choices: 'Regular\nHotfix',
+                        description: "What sort of Release is this, regular or hotfix? ",
+                        name: 'Release'
                    )
-                text(
-                   name: 'Notes',
-                   defaultValue: 'Enter Release notes',
-                   description: 'Do enter the description'
+                    text (
+                        name: 'Notes',
+                        defaultValue: 'Enter Release notes',
+                        description: 'Do enter the description'
                    )
-                credentials(
-                   name: 'mycredentials',
-                   description: "myCredentials",
-                   required: true
+                    credentials (
+                        name: 'mycredentials',
+                        description: "myCredentials",
+                        required: true
                   )
+                }
             }
-            }
-            
             steps{
                 echo "Deploying to production"
                 echo "welcome ${USR_NAME}"
