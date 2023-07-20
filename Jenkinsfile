@@ -14,7 +14,7 @@ pipeline{
                 message: "Should i continue ??"
                 ok: "Approved"
                 submitter: 'Aarya'
-                submittedParameter: "whoapproved"
+                submitterParameter: "whoapproved"
                 parameters{
                 string (
                    name: 'USR_NAME',
