@@ -11,9 +11,9 @@ pipeline{
                 timeout(time: 30 ,unit: 'SECONDS')
             }
             input{
-                message: "Should i continue ??"
-                ok: "Approved"
-                submitter: 'Aarya'
+                message: "Should i continue ??",
+                ok: "Approved",
+                submitter: 'Aarya',
                 submittedParameter: "whoapproved"
                 parameters{
                 string (
