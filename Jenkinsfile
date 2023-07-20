@@ -13,7 +13,7 @@ pipeline{
             input {
                 message: "Should i continue ??"
                 ok: "Approved"
-                submitter: 'Aarya'
+                submitter: 'srini'
                 submitterParameter: "whoapproved"
                 parameters{
                     string (
