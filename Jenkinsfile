@@ -6,8 +6,8 @@ pipeline{
                 echo "Building node application"
             }
         }
-        stage('Deploy to prod'){
-            options{
+        stage ('Deploy to prod') {
+            options {
                 timeout(time: 30 ,unit: 'SECONDS')
             }
             input {
