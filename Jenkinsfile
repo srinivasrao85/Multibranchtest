@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage('build'){
             steps{
-                echo "Build completed successfully"
+               // echo "Build completed successfully"
+                error "Build is failing"
             }
         }
     }
